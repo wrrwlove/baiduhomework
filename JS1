@@ -24,7 +24,7 @@ var button=document.getElementById("button");
 var display=document.getElementById("aqi-display");
 var input=document.getElementById("aqi-input");
 button.onclick=function(){
-display.innerHTML=input.innerHTML;}
+display.innerHTML=input.value;}
 })();
 
 </script>
