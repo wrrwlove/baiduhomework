@@ -5,7 +5,6 @@ div{
 #main{
 	  position: relative;
 	  margin: 0 auto;
-	  padding: 20px;
       width:95%;
       height: auto;
       background: #eee;
@@ -14,13 +13,12 @@ div{
 	position: absolute;
 	top: 20px;
 	left: 20px;
-	
-	width: 200px;
+	width: 160px;
 	height:300px; 
 	background: #fff;
 	}
 #middle{
-	margin: 0 180px 0 260px;
+	margin: 0 140px 0 220px;
 	width: auto; 
 	height: 400px; 
 	background: #fff;
@@ -28,9 +26,8 @@ div{
 #right{
 	position: absolute;
 	top: 20px;
-	right: 20px;
-	 
-    width: 120px;
+	right: 20px; 
+    width: 80px;
     height:350px;  
     background: #fff;
     }
@@ -38,9 +35,10 @@ img{
 	display: block;
 	float: left;
 	width: 80px;
-	height: 80px;	
+	height: 80px;
+	margin-bottom:5px; 	
 }
 span{
 	font-size: 18px;
-	margin: 10px;
+	margin-left: 5px;
 }
