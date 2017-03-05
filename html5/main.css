@@ -1,0 +1,86 @@
+body{
+	margin: 0 auto;
+	padding: 0 ;
+	background: #333;
+}
+#main{
+	height: 100%;
+	width: 95%;
+	margin: 0 auto;
+	background: #ccc;
+	overflow: hidden;
+}
+#left{
+	width: 70%;
+	height: 100%;
+	float: left;
+	margin: 10px;
+}
+#sidebar{
+	width: 300px;
+	float: left;
+	margin:20px; 
+	height: 500px;
+	background: #fff;
+}
+#text,#img,#img1,#list{
+	margin: 10px;
+	width: 100%;
+	padding: 5px ;
+	height: 300px;
+	background: #fff;
+    box-shadow:3px 3px 10px #9edef;
+}
+#banner{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	padding-left: 10px ;
+	color: #fff;
+	background: #000;
+}
+h1{float: left;
+margin-top:0; }
+#banner div{position:absolute;
+            top:20px;
+            left: 1100px;}
+#banner a{
+	display: block;
+	float: left;
+	width: 55px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+#img img{
+	display: block;
+	margin: 0 auto;
+	width: 300px;
+	border: 1px solid red;
+}
+#img1 img{
+	display: block;
+	float: left;
+	margin: 5px;
+	width: 120px;
+}
+ul,table{
+	height: 60px;
+	width: 600px;
+	margin: 10px auto;
+}
+form,textarea{
+	height: auto;
+	width: auto;
+	margin: 10px;
+}
+#footer{
+	width: 95%;
+    height: 50px;
+    margin: 0 auto;
+    color: #fff;
+	background: #000;
+	text-align: center; 
+}
