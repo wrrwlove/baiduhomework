@@ -1,0 +1,119 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+function getData() {
+  /*
+  coding here
+  */
+
+  /*
+  data = [
+    ["北京", 90],
+    ["北京", 90]
+    ……
+  ]
+  */
+
+    //新建数组data用来装分离出来的city和num
+  var data = [];
+  //取得source的DOM元素
+  var ul = document.getElementById('source');
+  //使用for循环和遍历ul变量的每个子辈,因为ul不是数组，所以使用ul.childElementCount代替对应的length
+  for (var i = 0; i < ul.childElementCount; i++) {
+    //使用split和children()分离出城市
+    var city = ul.children[i].innerHTML.split("空气质量：")[0];//也可以使用substring提取 var city = ul.children[i].innerHTML.substring(0,2)
+    //使用children不分会文本节点的特性挑出<b>90</b>,再使用Number()把对象的值(或字符串)转化为数字
+    var num = Number(ul.children[i].children[0].innerHTML);//也可以使用parseInt() var num = parseInt(ul.children[i].getElemntByTagName('b')[0].innerHTML)
+    //使用push方法将city和num加入
+    data.push([city,num]);
+  }
+  return data;
+
+}
+
+/**
+ * sortAqiData
+ * 按空气质量对data进行从小到大的排序
+ * 返回一个排序后的数组
+ */
+function sortAqiData(data) {
+    data.sort(function(a,b){
+      return a[1]-b[1];
+    });
+    return data;
+}
+
+/**
+ * render
+ * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 格式见ul中的注释的部分
+ */
+function render(data) {
+   var ul = document.getElementById("resort");
+   var arr = ["一","二","三","四","五","六","七"];
+   for(i=0;i<data.length;i++){
+    var li = document.createElement("li");
+    li.innerHTML = "第"+arr[i]+"名："+data[i][0]+"空气质量："+"<b>"+data[i][1]+"</b>";
+    ul.appendChild(li);
+   }
+}
+
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  render(aqiData);
+}
+
+function init() {
+
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+      //取得按钮的DOM元素
+  var btn = document.getElementById('sort-btn');
+  //排除浏览器兼容问题使用if语句判断
+  if (btn.attachEvent) {
+      btn.attachEvent("onclick",btnHandle);
+  } else if(btn.addEventListener){
+      btn.addEventListener("click",btnHandle,false);
+  }else{
+      btn.onclick = btnHandle;
+  }
+}
+
+init();
+
+</script>
+</body>
+</html>
