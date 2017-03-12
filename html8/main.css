@@ -1,0 +1,22 @@
+/*
+	响应式
+*/
+@media screen and (max-width: 768px) {
+	.col-4 {
+		width:48.93617021276595% !important;
+	}
+	.col-4-full {
+		margin-top: 20px;
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+	.col-1 {
+		width: 14.893617021276595% !important;
+	}
+	.col-2-8 {
+		width:65.95744680851064% !important;
+	}
+	.col-2-3 {
+		margin-top: 20px;
+		margin-left: 0 !important;
+		width: 23.404
